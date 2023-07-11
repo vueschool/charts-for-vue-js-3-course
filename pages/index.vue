@@ -30,8 +30,17 @@ const chartData = computed((): ChartData<"bar"> => {
     labels: movies.value.map((movie) => movie.title),
     datasets: [
       {
-        backgroundColor: ["#c82834", "#244771"],
+        label: "IMDb rating",
+        backgroundColor: "#c82834",
+        stack: "rating",
         data: movies.value.map((movie) => movie.rating),
+      },
+
+      {
+        label: "Rotten Tomatoes Rating",
+        stack: "rating",
+        backgroundColor: "#244771",
+        data: movies.value.map((movie) => movie.rating + 1),
       },
     ],
   };
@@ -42,9 +51,7 @@ const chartData = computed((): ChartData<"bar"> => {
     v-if="movies.length"
     :data="chartData"
     :options="{
-      plugins: {
-        legend: { display: false },
-      },
+      indexAxis: 'y',
     }"
   />
 </template>
