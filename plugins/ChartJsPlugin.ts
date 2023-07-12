@@ -22,4 +22,6 @@ export default defineNuxtPlugin((nuxtApp) => {
     LineElement,
     ArcElement
   );
+
+  ChartJS.defaults.backgroundColor = "pink";
 });

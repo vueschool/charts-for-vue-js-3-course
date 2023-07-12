@@ -13,7 +13,7 @@ const chartData = computed((): ChartData<"bar"> => {
     datasets: [
       {
         label: "IMDb rating",
-        backgroundColor: "#c82834",
+        // backgroundColor: "#c82834",
         stack: "rating",
         data: movies.value.map((movie) => movie.rating),
       },

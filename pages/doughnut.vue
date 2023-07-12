@@ -24,13 +24,13 @@ const chartData = computed((): ChartData<"pie"> => {
     labels: repos,
     datasets: [
       {
-        backgroundColor: [
-          "#41B883",
-          "#149eca",
-          "#c30e2e",
-          "#f96743",
-          "#043271",
-        ],
+        // backgroundColor: [
+        //   "#41B883",
+        //   "#149eca",
+        //   "#c30e2e",
+        //   "#f96743",
+        //   // "#043271",
+        // ],
         label: "Stars",
         data: repoData.value.map((repo) => repo.stargazers_count),
       },
@@ -39,7 +39,7 @@ const chartData = computed((): ChartData<"pie"> => {
 });
 </script>
 <template>
-  <div style="display: flex; justify-content: center">
+  <div style="display: flex; justify-content: center; height: 500px">
     <Pie
       v-if="repoData.length === repos.length"
       :data="chartData"

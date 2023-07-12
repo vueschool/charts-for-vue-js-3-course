@@ -16,7 +16,7 @@ const chartData = computed((): ChartData<"line"> => {
     datasets: [
       {
         label: "Temperature",
-        backgroundColor: "#c82834",
+        // backgroundColor: "#c82834",
         data: weatherData.value.hourly.temperature_2m,
       },
     ],
